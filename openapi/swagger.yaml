@@ -1,0 +1,56 @@
+swagger: "2.0"
+info:
+  description: This is the swagger file that goes with our server code
+  version: "1.0.0"
+  title: Swagger Test
+consumes:
+  - "application/json"
+produces:
+  - "application/json"
+basePath: "/"
+
+# Paths supported by the server application
+paths:
+  /:
+    get:
+      operationId: "flaskr.routes.hello"
+      tags:
+        - "Hello"
+      summary: "Hello world static test with openapi 2.0"
+      description: "Hello world static test with openapi 2.0"
+      responses:
+        200:
+          description: "Successful"
+          schema:
+            type: "string"
+  /ctime:
+      get:
+        operationId: "flaskr.routes.utc_time"
+        tags:
+         - "UTC time"
+        summary: "Hello world static test with openapi 2.0"
+        description: "Hello world static test with openapi 2.0"
+        responses:
+          200:
+            description: "Successful"
+            schema:
+                type: "string"
+  /ctime/{timeZone}:
+      get:
+        summary: Returns time in provide timizone
+        operationId: "flaskr.routes.utc_time_zone"
+        tags:
+          - "UTC time for Specific TimeZOne"
+        parameters:
+        - in: path
+          name: timeZone
+          required: true
+          type: string
+          description: The TimeZone for your current time.
+        responses:
+          200:
+            description: OK
+            schema:
+              type: "string"
+          400:
+            description: invalid timizone
