@@ -28,4 +28,7 @@ This is a POC to check if microservices can be made using flask with proper API 
 4. To see the services running and health check use command ```minikube dashboard``` 
 
 ## Automated tests for each micro-service:
-**needs to be added [WIP].
+1. Using [pytest](https://docs.pytest.org/en/latest/contents.html) to run automated tests.
+2. To run the tests cd into the project root and run ```pytest -v```
+3. to run specific test method use ```pytest tests/test_hello.py::test_hello -v```
+4. More pytest usage [reference](https://docs.pytest.org/en/latest/usage.html).
